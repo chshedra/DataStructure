@@ -7,10 +7,13 @@ void CreateQueue(Queue *newQueue)
 	newQueue->Second = CreateStack();
 }
 
+//добавление элемента в очередь
 bool Enqueue(Queue* newQueue, int &value)
 {
 	bool isOverflow;
-	if (newQueue->First->Size + newQueue->Second->Size == newQueue->First->Capacity)
+	if (newQueue->First->Size 
+		+ newQueue->Second->Size 
+		== newQueue->First->Capacity)
 	{
 		isOverflow = false;
 	}
@@ -21,6 +24,7 @@ bool Enqueue(Queue* newQueue, int &value)
 	return isOverflow;
 }
 
+//извлечение элемента из очереди
 bool DeQueue(Queue *newQueue, int &value) {
 	bool isEmpty;
 	if (newQueue->First->Head == nullptr && newQueue->Second->Head == nullptr)
@@ -39,14 +43,14 @@ bool DeQueue(Queue *newQueue, int &value) {
 
 void ClearQueue(Queue* newQueue)
 {
-	DeleteStack(newQueue->First);
-	DeleteStack(newQueue->Second);
+	DeleteStack(newQueue->First);//очистка первого стэка
+	DeleteStack(newQueue->Second);//очистка второго стэка
 }
 
 void GrowQueue(Queue* newQueue)
 {
-	GrowStack(newQueue->First);
-	GrowStack(newQueue->Second);
+	GrowStack(newQueue->First);//увеличение первого стэка
+	GrowStack(newQueue->Second);//увеличение второго стэка
 }
 
 void DisplayQueue(Queue* newQueue)

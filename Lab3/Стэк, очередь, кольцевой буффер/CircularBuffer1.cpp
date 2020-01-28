@@ -145,6 +145,5 @@ void DisplayBuffer(CircularBuffer* buffer)
 		}
 	
 	}
-	
 	cout << endl;
 }

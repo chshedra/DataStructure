@@ -81,7 +81,6 @@ void DisplayQueueByBuffer(QueueByBuffer* queue)
 	}
 	else
 	{
-		
 		for (int i = 0; i < queue->Queue->WritePoint; i++)
 		{
 			cout << queue->Queue->Buffer[i] << " ";
