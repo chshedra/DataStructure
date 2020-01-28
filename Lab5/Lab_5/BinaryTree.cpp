@@ -60,7 +60,7 @@ BinaryTreeNode* BinaryTree::FindMin(BinaryTreeNode* node)
 	return node;
 }
 
-void BinaryTree::Insert(BinaryTreeNode* node, int key)
+bool BinaryTree::Insert(BinaryTreeNode* node, int key)
 {
 
 	if (node == nullptr)
@@ -68,14 +68,14 @@ void BinaryTree::Insert(BinaryTreeNode* node, int key)
 		node = new BinaryTreeNode;
 		node->Init(key);
 		Root = node;
-		return;
+		return true;
 	}
 	if (key < node->Key && node->Left == nullptr)
 	{
 		node->Left = new BinaryTreeNode;
 		node->Left->Init(key);
 		node->Left->Parent = node;
-		return;
+		return true;
 	}
 	else if (key < node->Key)
 	{
@@ -86,7 +86,7 @@ void BinaryTree::Insert(BinaryTreeNode* node, int key)
 		node->Right = new BinaryTreeNode;
 		node->Right->Init(key);
 		node->Right->Parent = node;
-		return;
+		return true;
 	}
 	else if (key > node->Key)
 	{
@@ -94,17 +94,15 @@ void BinaryTree::Insert(BinaryTreeNode* node, int key)
 	}
 	else
 	{
-		cout << "Элемент с таким ключом присутствует в дереве.\n\n";
-		return;
+		return false;
 	}
 }
 
-void BinaryTree::Remove(BinaryTreeNode* node, int key)
+bool BinaryTree::Remove(BinaryTreeNode* node, int key)
 {
 	if (node == nullptr)
 	{
-		cout << "Такого элемента нет.\n\n";
-		return;
+		return false;
 	}
 	if (key < node->Key)
 	{

@@ -11,8 +11,8 @@ struct BinaryTree
 	BinaryTreeNode* Find(BinaryTreeNode* node, int key);
 	BinaryTreeNode* FindMax(BinaryTreeNode* node);
 	BinaryTreeNode* FindMin(BinaryTreeNode* node);
-	void Insert(BinaryTreeNode* node, int key);
-	void Remove(BinaryTreeNode* node, int key);
+	bool Insert(BinaryTreeNode* node, int key);
+	bool Remove(BinaryTreeNode* node, int key);
 	void Clear(BinaryTreeNode* node);
 	bool IsEmpty();
 

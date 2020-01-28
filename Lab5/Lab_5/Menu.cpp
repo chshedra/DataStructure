@@ -94,8 +94,15 @@ void BinaryTreeMenu()
 			int key = InputValidation();
 			cout << endl;
 
-			newTree->Insert(newTree->Root, key);
-			Print(newTree->Root, 0);
+			bool isInserted = newTree->Insert(newTree->Root, key);
+			if (isInserted == true)
+			{
+				Print(newTree->Root, 0);
+			}
+			else
+			{
+				cout << "This element is already in the tree!\n";
+			}
 			break;
 		}
 		case 2:
@@ -110,8 +117,15 @@ void BinaryTreeMenu()
 			int key = InputValidation();
 			cout << endl;
 
-			newTree->Remove(newTree->Root, key);
-			Print(newTree->Root, 0);
+			bool isRemoved = newTree->Remove(newTree->Root, key);
+			if (isRemoved = true)
+			{
+				Print(newTree->Root, 0);
+			}
+			else
+			{
+				cout << "There is not this element in the tree!\n";
+			}
 			break;
 		}
 		case 3:

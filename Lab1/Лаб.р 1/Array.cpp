@@ -13,7 +13,7 @@ void Create(Dynamic* dynArray)
 	dynArray->array = new int[dynArray->capacity];
 }
 
-
+//добавить случайные значения
 void ArrayGetAuto(Dynamic *dynArray, int lenght)
 {
 	srand(time(NULL));
@@ -23,7 +23,7 @@ void ArrayGetAuto(Dynamic *dynArray, int lenght)
 	}
 }
 
-
+//ввести элементы вручную
 void ArrayGetManually(Dynamic *dynArray, int lenght)
 {
 	if (lenght >= dynArray->capacity)
@@ -41,7 +41,7 @@ void ArrayGetManually(Dynamic *dynArray, int lenght)
 
 }
 
-
+//вывод массива на экран
 void ArrayShow(Dynamic* dynArray)
 {
 	cout << "Номер элемента: ";
@@ -57,7 +57,7 @@ void ArrayShow(Dynamic* dynArray)
 	cout << "\n\n";
 }
 
-
+//увеличение размера массива
 void Resize(Dynamic* dynArray)
 {
 	if (dynArray->length == (dynArray->capacity / 2) - 1 &&
@@ -81,7 +81,7 @@ void Resize(Dynamic* dynArray)
 	dynArray->array = temp_array;
 }
 
-
+//добавление элемента
 void AddElement(Dynamic* dynArray, int value, int index)
 {
 	dynArray->length++;
@@ -99,7 +99,7 @@ void AddElement(Dynamic* dynArray, int value, int index)
 	dynArray->array[index] = value;
 }
 
-
+//удаление элемнта из массива
 void DeleteElement(Dynamic* dynArray, int index)
 {
 	for (int i = index - 1; i < dynArray->length - 1; i++)
@@ -115,7 +115,7 @@ void DeleteElement(Dynamic* dynArray, int index)
 	}
 }
 
-
+//вставка элемента на определенное место
 void PushElement(Dynamic* dynArray, int value, int index)
 {
 	dynArray->length += 1;
@@ -200,7 +200,7 @@ void BinarySearch(Dynamic* dynArray, int value)
 	}
 }
 
-
+//проверка создания массива
 bool ArrayValidation(bool isArrayCreated)
 {
 	if (isArrayCreated == false)
@@ -213,7 +213,7 @@ bool ArrayValidation(bool isArrayCreated)
 	}
 }
 
-
+//прорверка входных данных
 int InputValidation(int value) 
 {
 	while (true) 
