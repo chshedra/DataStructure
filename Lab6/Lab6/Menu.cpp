@@ -134,10 +134,10 @@ void AVLTreeMenu()
 	{
 		newTree->Root = newTree->AddElement(newTree->Root, rand() % 100);
 	}
+	DisplayAVLTree(newTree->Root, 0, nullptr);
 	cout << endl;
 	while (ending)
 	{
-		DisplayAVLTree(newTree->Root, 0);
 		cout << endl;
 		cout << "Choose the item from the menu:\n"
 			<< "1.Add element\n"
@@ -152,6 +152,7 @@ void AVLTreeMenu()
 			cout << "Enter the number\n";
 			number = InputValidation();
 			newTree->Root = newTree->AddElement(newTree->Root, number);
+			DisplayAVLTree(newTree->Root, 0, nullptr);
 			break;
 		}
 		case 2:
@@ -166,6 +167,7 @@ void AVLTreeMenu()
 			{
 				cout << "There is not this element in the tree\n";
 			}
+			DisplayAVLTree(newTree->Root, 0, nullptr);
 			break;
 		}
 		case 3:
@@ -176,6 +178,7 @@ void AVLTreeMenu()
 			if (newTree->SearchElement(number))
 			{
 				cout << "Element has been found\n";
+				DisplayAVLTree(newTree->Root, 0, &number);
 			}
 			else
 			{

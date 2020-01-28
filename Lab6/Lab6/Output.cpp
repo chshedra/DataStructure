@@ -52,16 +52,30 @@ void  PrintTree(RBTreeNode* node, int level)
 	}
 }
 
-void DisplayAVLTree(AVLTreeNode* node, int level)
+void DisplayAVLTree(AVLTreeNode* node, int level, int *searchElem)
 {
 	if (node != nullptr)
 	{
-		DisplayAVLTree(node->Right, level + 1);
+		DisplayAVLTree(node->Right, level + 1, searchElem);
 		for (int i = 0; i < level; i++)
 		{
 			cout << "   ";
 		}
-		cout << node->Data << "(" << node->Height << ")" << endl;
-		DisplayAVLTree(node->Left, level + 1);
+		if (searchElem != nullptr)
+		{
+			if (*searchElem == node->Data)
+			{
+				cout << "[" << node->Data << "!]" << "(" << node->Height << ")" << endl;
+			}
+			else
+			{
+				cout << node->Data << "(" << node->Height << ")" << endl;
+			}
+		}
+		else
+		{
+			cout << node->Data << "(" << node->Height << ")" << endl;
+		}
+		DisplayAVLTree(node->Left, level + 1, searchElem);
 	}
 }
