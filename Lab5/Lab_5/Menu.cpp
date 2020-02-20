@@ -33,6 +33,7 @@ void MainMenu()
 {
 	while (true)
 	{
+		//comment
 		cout << "1.Binary tree\n"
 			<< "2.Treap Tree\n"
 			<< "3.Exit\n";
