@@ -8,85 +8,85 @@ using namespace std;
 
 
 
-void Create(Array* dynArray, int size)
+void Create(Array* dynamicArray, int size)
 {
-	dynArray->length = 0;
-	dynArray->capacity = size;
-	dynArray->array = new int[dynArray->capacity];
+	dynamicArray->Length = 0;
+	dynamicArray->Capacity = size;
+	dynamicArray->Array = new int[dynamicArray->Capacity];
 }
 
-void GetRandom(Array* dynArray, int size)
+void GetRandom(Array* dynamicArray, int size)
 {
 	srand(time(NULL));
 	for (int i = 0; i < size; i++)
 	{
-		dynArray->array[i] = rand() % 100;
-		dynArray->length++;
+		dynamicArray->Array[i] = rand() % 100;
+		dynamicArray->Length++;
 	}
 }
 
-void GetManualy(Array* dynArray, int size)
+void GetManualy(Array* dynamicArray, int size)
 {
 	for (int i = 0; i < size; i++)
 	{
-		dynArray->array[i] = InputValidation();
-		dynArray->length++;
+		dynamicArray->Array[i] = InputValidation();
+		dynamicArray->Length++;
 	}
 }
 
-void Resize(Array* dynArray)
+void Resize(Array* dynamicArray)
 {
-	if (dynArray->length >= dynArray->capacity)
+	if (dynamicArray->Length >= dynamicArray->Capacity)
 	{
-		//TODO: вынести в константу
-		dynArray->capacity = dynArray->capacity * 1.5;
+		const double growFactor = 1.5;
+		dynamicArray->Capacity = dynamicArray->Capacity * growFactor;
 	}
 
-	int* newArray = new int[dynArray->capacity];
+	int* newArray = new int[dynamicArray->Capacity];
 
-	for (int i = 0; i < dynArray->length; i++)
+	for (int i = 0; i < dynamicArray->Length; i++)
 	{
-		newArray[i] = dynArray->array[i];
+		newArray[i] = dynamicArray->Array[i];
 	}
 
-	delete[] dynArray->array;
-	dynArray->array = newArray;
+	delete[] dynamicArray->Array;
+	dynamicArray->Array = newArray;
 }
 
-void AddElem(Array* dynArray, int value, int index)
+void AddElem(Array* dynamicArray, int value, int index)
 {
-	if (dynArray->capacity == dynArray->length)
+	if (dynamicArray->Capacity == dynamicArray->Length)
 	{
-		Resize(dynArray);
+		Resize(dynamicArray);
 	}
-	for (int i = dynArray->length + 1; i > index; i--)
+	for (int i = dynamicArray->Length + 1; i > index; i--)
 	{
-		dynArray->array[i] = dynArray->array[i - 1];
+		dynamicArray->Array[i] = dynamicArray->Array[i - 1];
 	}
-	dynArray->array[index] = value;
-	dynArray->length++;
+	dynamicArray->Array[index] = value;
+	dynamicArray->Length++;
 }
 
-bool DeleteElem(Array* dynArray, int index)
+bool DeleteElem(Array* dynamicArray, int index)
 {
-	if (dynArray->length - 1 < index || index < 0)
+	if (dynamicArray->Length - 1 < index || index < 0)
 	{
 		return false;
 	}
 
-	for (int i = index; i < dynArray->length; i++)
+	for (int i = index; i < dynamicArray->Length; i++)
 	{
-		dynArray->array[i] = dynArray->array[i +1];
+		dynamicArray->Array[i] = dynamicArray->Array[i +1];
 	}
-	dynArray->length--;
+	dynamicArray->Length--;
 	return true;
 }
 
-bool SearchElem(Array* dynArray, int value, int* index)
+bool SearchElem(Array* dynamicArray, int value, int* index)
 {
-	for (int i = 0; i < dynArray->length; i++)
+	for (int i = 0; i < dynamicArray->Length; i++)
 	{
-		if (dynArray->array[i] == value)
+		if (dynamicArray->Array[i] == value)
 		{
 			*index = i;
 			return true;
@@ -95,16 +95,16 @@ bool SearchElem(Array* dynArray, int value, int* index)
 	return false;
 }
 
-bool BinarySearch(Array* dynArray, int value, int* index)
+bool BinarySearch(Array* dynamicArray, int value, int* index)
 {
 	int first = 0;
-	int last = dynArray->length;
+	int last = dynamicArray->Length;
 	int mid;
 
 	while (first < last)
 	{
 		mid = (last + first) / 2;
-		if (value <= dynArray->array[mid])
+		if (value <= dynamicArray->Array[mid])
 		{
 			last = mid;
 		}
@@ -113,7 +113,7 @@ bool BinarySearch(Array* dynArray, int value, int* index)
 			first = mid + 1;
 		}
 	}
-	if (dynArray->array[first] == value)
+	if (dynamicArray->Array[first] == value)
 	{
 		*index = first;
 		return true;
@@ -124,25 +124,25 @@ bool BinarySearch(Array* dynArray, int value, int* index)
 	}
 }
 
-void SortArray(Array* dynArray)
+void SortArray(Array* dynamicArray)
 {
 	int i, j;
-	for (i = 0; i < dynArray->length - 1; i++)
+	for (i = 0; i < dynamicArray->Length - 1; i++)
   
-		for (j = 0; j < dynArray->length- i - 1; j++)
-			if (dynArray->array[j] > dynArray->array[j + 1])
+		for (j = 0; j < dynamicArray->Length- i - 1; j++)
+			if (dynamicArray->Array[j] > dynamicArray->Array[j + 1])
 			{
-				int temp = dynArray->array[j];
-				dynArray->array[j] = dynArray->array[j + 1];
-				dynArray->array[j + 1] = temp;
+				int temp = dynamicArray->Array[j];
+				dynamicArray->Array[j] = dynamicArray->Array[j + 1];
+				dynamicArray->Array[j + 1] = temp;
 			}
 }
 
-void PrintArray(Array* dynArray)
+void PrintArray(Array* dynamicArray)
 {
-	for (int i = 0; i < dynArray->length; i++)
+	for (int i = 0; i < dynamicArray->Length; i++)
 	{
-		cout << dynArray->array[i] << " ";
+		cout << dynamicArray->Array[i] << " ";
 	}
 	cout << endl;
 }

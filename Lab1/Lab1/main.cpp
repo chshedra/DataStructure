@@ -3,7 +3,7 @@
 
 void main()
 {
-    Array* dynArray = new Array;
-    Menu(dynArray);
-    delete dynArray;
+    Array* dynamicArray = new Array;
+    Menu(dynamicArray);
+    delete dynamicArray;
 }

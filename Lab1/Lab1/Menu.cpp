@@ -4,14 +4,15 @@
 
 using namespace std;
 
-void Menu(Array* dynArray)
+
+void Menu(Array* dynamicArray)
 {
 	bool isCreated = false;
 	while (true)
 	{
 		if (isCreated != false)
 		{
-			PrintArray(dynArray);
+			PrintArray(dynamicArray);
 		}
 
 		cout << "Enter the item from the menu:" << endl
@@ -30,204 +31,174 @@ void Menu(Array* dynArray)
 		int choice = InputValidation();
 		switch (choice)
 		{
-			//TODO:RSDN
-		case 1:
-		{
+			case 1:
+			{
+				if (!isCreated)
+				{
+					cout << "Enter the size of array: ";
+					int size = InputValidation();
+					if (size > 0)
+					{
+						Create(dynamicArray, size);
+						GetRandom(dynamicArray, size);
+						isCreated = true;
+					}
+					else
+					{
+						cout << "Enter the correct size!" << endl;
+					}
+				}
+				else
+				{
+					cout << "Array has already created!" << endl;
+				}
+				break;
 
-			if (!isCreated)
+			}
+			case 2:
 			{
-				cout << "Enter the size of array: ";
-				int size = InputValidation();
-				if (size > 0)
+				if (!isCreated)
 				{
-					Create(dynArray, size);
-					GetRandom(dynArray, size);
-					isCreated = true;
+					cout << "Enter the size of array: ";
+					int size = InputValidation();
+					if (size > 0)
+					{
+						Create(dynamicArray, size);
+						GetManualy(dynamicArray, size);
+						isCreated = true;
+					}
+					else
+					{
+						cout << "Enter the correct size!" << endl;
+					}
 				}
 				else
 				{
-					cout << "Enter the correct size!" << endl;
-				}
-			}
-			else
-			{
-				cout << "Array has already created!" << endl;
-			}
-			break;
-
-		}
-		case 2:
-		{
-			//TODO:
-			if (isCreated == false)
-			{
-				cout << "Enter the size of array: ";
-				int size = InputValidation();
-				if (size > 0)
-				{
-					Create(dynArray, size);
-					GetManualy(dynArray, size);
-					isCreated = true;
-				}
-				else
-				{
-					cout << "Enter the correct size!" << endl;
-				}
-			}
-			else
-			{
-				cout << "Array has already created!" << endl;
-			}
-			break;
-		}
-		case 3:
-		{
-			if (isCreated == false)
-			{
-				cout << "Create the array!" << endl;
-			}
-			else
-			{
-				cout << "Enter the value: ";
-				int value = InputValidation();
-				AddElem(dynArray, value, dynArray->length);
-			}
-			break;
-		}
-		case 4:
-		{
-			if (isCreated == false)
-			{
-				cout << "Create the array!" << endl;
-			}
-			else
-			{
-				cout << "Enter the value: ";
-				int value = InputValidation();
-				AddElem(dynArray, value, 0);
-			}
-			break;
-		}
-		case 5:
-		{
-			if (isCreated == false)
-			{
-				cout << "Create the array!" << endl;
-			}
-			else
-			{
-				cout << "Enter the value: ";
-				int value = InputValidation();
-				cout << endl;
-				cout << "Enter the index: ";
-				int index = InputValidation();
-				if (index < 0 || index > dynArray->length - 1)
-				{
-					cout << "Enter the correct index!" << endl;
-				}
-				else
-				{
-					AddElem(dynArray, value, index + 1);
-				}
-			}
-			break;
-		}
-		case 6:
-		{
-			if (isCreated == false)
-			{
-				cout << "Create the array!" << endl;
-			}
-			else
-			{
-				cout << "Enter the index: ";
-				int index = InputValidation();
-				bool isDeleted = DeleteElem(dynArray, index);
-				//TODO: Дубль
-				if (isDeleted == true)
-				{
-					cout << "Element has been deleted" << endl;
-				}
-				else
-				{
-					cout << "Enter the correct index!" << endl;
-				}
-			}
-			break;
-		}
-		case 7:
-		{
-			if (isCreated == false)
-			{
-				cout << "Create the array!" << endl;
-			}
-			else
-			{
-				//TODO: Почему здесь?
-				bool isSearched;
-				int index;
-				cout << "Enter the value: ";
-				int value = InputValidation();
-				isSearched = SearchElem(dynArray, value, &index);
-				cout << endl;
-				//TODO: Дубль
-				if (isSearched == true)
-				{
-					cout << "Element by index " << index << endl;
-				}
-				else
-				{
-					cout << "There is not element with that value" << endl;
+					cout << "Array has already created!" << endl;
 				}
 				break;
 			}
-		}
-		case 8:
-		{
-			if (isCreated == false)
+			case 3:
 			{
-				cout << "Create the array!" << endl;
-			}
-			else
-			{
-				bool isSearched;
-				int index;
-				cout << "Enter the value: ";
-				int value = InputValidation();
-				isSearched = BinarySearch(dynArray, value, &index);
-				cout << endl;
-				//TODO: Дубль
-				if (isSearched == true)
+				if (isCreated == false)
 				{
-					cout << "Element by index " << index << endl;
+					cout << "Create the array!" << endl;
 				}
 				else
 				{
-					cout << "There is not element with that value" << endl;
+					cout << "Enter the value: ";
+					int value = InputValidation();
+					AddElem(dynamicArray, value, dynamicArray->Length);
+				}
+				break;
+			}
+			case 4:
+			{
+				if (isCreated == false)
+				{
+					cout << "Create the array!" << endl;
+				}
+				else
+				{
+					cout << "Enter the value: ";
+					int value = InputValidation();
+					AddElem(dynamicArray, value, 0);
+				}
+				break;
+			}
+			case 5:
+			{
+				if (isCreated == false)
+				{
+					cout << "Create the array!" << endl;
+				}
+				else
+				{
+					cout << "Enter the value: ";
+					int value = InputValidation();
+					cout << endl;
+					cout << "Enter the index: ";
+					int index = InputValidation();
+					if (index < 0 || index > dynamicArray->Length - 1)
+					{
+						cout << "Enter the correct index!" << endl;
+					}
+					else
+					{
+						AddElem(dynamicArray, value, index + 1);
+					}
+				}
+				break;
+			}
+			case 6:
+			{
+				if (isCreated == false)
+				{
+					cout << "Create the array!" << endl;
+				}
+				else
+				{
+					cout << "Enter the index: ";
+					int index = InputValidation();
+					bool isDeleted = DeleteElem(dynamicArray, index);
+					ShowMessage(isDeleted, index);
+				}
+				break;
+			}
+			case 7:
+			{
+				if (isCreated == false)
+				{
+					cout << "Create the array!" << endl;
+				}
+				else
+				{
+					int index;
+					cout << "Enter the value: ";
+					int value = InputValidation();
+					bool isSearched = SearchElem(dynamicArray, value, &index);
+					cout << endl;
+					ShowMessage(isSearched, index);
 				}
 			}
-			break;
-		}
-		case 9: 
-		{
-			if (isCreated == false)
+			case 8:
 			{
-				cout << "Create the array!" << endl;
+				if (isCreated == false)
+				{
+					cout << "Create the array!" << endl;
+				}
+				else
+				{
+					bool isSearched;
+					int index;
+					cout << "Enter the value: ";
+					int value = InputValidation();
+					isSearched = BinarySearch(dynamicArray, value, &index);
+					cout << endl;
+					ShowMessage(isSearched, index);
+				}
+				break;
 			}
-			else
+			case 9: 
 			{
-				SortArray(dynArray);
+				if (isCreated == false)
+				{
+					cout << "Create the array!" << endl;
+				}
+				else
+				{
+					SortArray(dynamicArray);
+				}
+				break;
 			}
-			break;
-		}
-		case 10:
-		{
-			return;
-		}
-		default:
-		{
-			cout << "Choose the right item!" << endl;
-		}
+			case 10:
+			{
+				return;
+			}
+			default:
+			{
+				cout << "Choose the right item!" << endl;
+			}
 		}
 	}
 }
@@ -252,4 +223,16 @@ int InputValidation()
 	}
 
 	return number;
+}
+
+void ShowMessage(bool isSearched, int index)
+{
+	if (isSearched == true)
+	{
+		cout << "Element by index " << index << endl;
+	}
+	else
+	{
+		cout << "There is not element with that value" << endl;
+	}
 }

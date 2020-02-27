@@ -2,19 +2,18 @@
 
 struct Array
 {
-	//RSDN:
-	int* array;
-	int length;
-	int capacity;
+	int* Array;
+	int Length;
+	int Capacity;
 };
 
 //RSDN:
-void Create(Array* dynArray, int size);
-void PrintArray(Array* dynArray);
-void GetManualy(Array* dynArray, int size);
-void GetRandom(Array* dynArray, int size);
-void AddElem(Array* dynArray, int value, int index);
-bool DeleteElem(Array* dynArray, int index);
-bool SearchElem(Array* dynArray, int value, int* index);
-bool BinarySearch(Array* dynArray, int value, int* index);
-void SortArray(Array* dynArray);
+void Create(Array* dynamicArray, int size);
+void PrintArray(Array* dynamicArray);
+void GetManualy(Array* dynamicArray, int size);
+void GetRandom(Array* dynamicArray, int size);
+void AddElem(Array* dynamicArray, int value, int index);
+bool DeleteElem(Array* dynamicArray, int index);
+bool SearchElem(Array* dynamicArray, int value, int* index);
+bool BinarySearch(Array* dynamicArray, int value, int* index);
+void SortArray(Array* dynamicArray);
