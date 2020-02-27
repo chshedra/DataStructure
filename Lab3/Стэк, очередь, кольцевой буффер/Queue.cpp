@@ -25,6 +25,7 @@ bool Enqueue(Queue* newQueue, int &value)
 }
 
 //извлечение элемента из очереди
+//TODO:RSDN
 bool DeQueue(Queue *newQueue, int &value) {
 	bool isEmpty;
 	if (newQueue->First->Head == nullptr && newQueue->Second->Head == nullptr)
@@ -49,6 +50,7 @@ void ClearQueue(Queue* newQueue)
 
 void GrowQueue(Queue* newQueue)
 {
+	//TODO: комментарии
 	GrowStack(newQueue->First);//увеличение первого стэка
 	GrowStack(newQueue->Second);//увеличение второго стэка
 }

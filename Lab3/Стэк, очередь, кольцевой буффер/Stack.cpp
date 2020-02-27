@@ -54,6 +54,7 @@ void DeleteStack(Stack* newStack)
 
 void GrowStack(Stack* newStack)
 {
+	//TODO: вынести в константу
 	newStack->Capacity = newStack->Capacity * 1.5;
 }
 

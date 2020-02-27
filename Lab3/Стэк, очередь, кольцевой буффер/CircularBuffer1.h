@@ -7,6 +7,7 @@ struct CircularBuffer
 	int WritePoint;
 	int Capacity;
 	int Size;
+	//TODO:RSDN
 	bool isFull;
 	bool isGrown;
 };

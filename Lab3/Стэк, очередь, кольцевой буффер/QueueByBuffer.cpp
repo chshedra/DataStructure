@@ -105,6 +105,7 @@ bool GrowQueue(QueueByBuffer* queue)
 	else
 	{
 		queue->Queue->WritePoint = queue->Queue->Capacity;
+		//TODO: вынести в константу
 		queue->Queue->Capacity = queue->Queue->Capacity * 1.5;
 		queue->Queue->isFull = false;
 	}

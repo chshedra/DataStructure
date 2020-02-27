@@ -43,6 +43,7 @@ void StackMenu(Stack* newStack, int stackChoise)
 		{
 		case 1:
 		{
+			//TODO: почему здесь?
 			bool isOverflow;
 			cout << "Enter the value: ";
 			int value = InputValidation();
@@ -132,6 +133,7 @@ void CircularBufferMenu(CircularBuffer* buffer)
 			}
 			case 2:
 			{
+				//TODO: почему здесь?
 				bool isEmpty;
 				int readItem;
 				isEmpty = ReadItem(buffer, readItem);
@@ -185,6 +187,7 @@ void QueueByStacksMenu(Queue* newQueue)
 		{
 			case 1:
 			{
+				//TODO:RSDN
 				bool isEmpty;
 				cout << "Enter the value ";
 				int value = InputValidation();
@@ -201,6 +204,7 @@ void QueueByStacksMenu(Queue* newQueue)
 			}
 			case 2:
 			{
+				//TODO: почему здесь?
 				int dequeueItem;
 				bool isEmpty;
 				isEmpty = DeQueue(newQueue, dequeueItem);
@@ -264,6 +268,7 @@ void QueueByBufferMenu(QueueByBuffer* queue)
 			}
 			case 2:
 			{
+				//TODO: почему здесь?
 				int dequeuedItem = 0;
 				bool isEmpty;
 				isEmpty = DequeueItem(queue, dequeuedItem);
