@@ -3,9 +3,10 @@
 
 using namespace std;
 
-
+//TODO: naming
 int Hash(string str, int size)
 {
+	//TODO:RSDN
 	double a;
 	double hash = 0;
 	a = (sqrt(5) - 1) / 2;
@@ -57,6 +58,7 @@ bool Push(int size, int &count, string key, string value, Table **table)
 
 bool DeleteItem(Table** table, string key, int size, int &count)
 {
+	//TODO: почему здесь?
 	int index;
 	Table* current = nullptr;
 	Table* prev = nullptr;
@@ -157,5 +159,3 @@ void DisplayTable(Table **table, int size)
 	}
 	cout << endl;
 }
-
-

@@ -20,8 +20,7 @@ bool AddItem(Table** dictionary, string key, string value, int size, int &count)
 
 bool DeleteFromDictionary(Table** dictionary, string key, int size, int &count)
 {
-	bool isDeleted;
-	isDeleted = DeleteItem(dictionary, key, size, count);
+	bool isDeleted = DeleteItem(dictionary, key, size, count);
 	return isDeleted;
 }
 
