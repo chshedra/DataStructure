@@ -1,9 +1,9 @@
 #include <iostream>
-#include "List.h"
+#include "DoubleLinkedList.h"
 using namespace std;
 
 
-int LinearSearch(List* list, int value)
+int LinearSearch(DoubleLinkedList* list, int value)
 {
 	Node* searchNode = list->Head;
 	int count = 0;
@@ -16,7 +16,7 @@ int LinearSearch(List* list, int value)
 			return count;
 }
 
-void SortList(List* list)
+void SortList(DoubleLinkedList* list)
 {
 	Node* startNode = list->Head;
 	Node* node;
@@ -40,7 +40,7 @@ void SortList(List* list)
 	}
 }
 
-void SwapNode(List* list, Node* first, Node* second)
+void SwapNode(DoubleLinkedList* list, Node* first, Node* second)
 {
 	if (first->Prev)
 	{
@@ -66,9 +66,9 @@ void SwapNode(List* list, Node* first, Node* second)
 }
 
 
-List *CreateList()
+DoubleLinkedList *CreateList()
 {
-	List *newList = new List;
+	DoubleLinkedList *newList = new DoubleLinkedList;
 	newList->Head = nullptr;
 	newList->Tail = nullptr;
 	newList->Size = 0;
@@ -76,7 +76,7 @@ List *CreateList()
 }
 
 
-void InsertFront(List *list, int Data)
+void InsertFront(DoubleLinkedList *list, int Data)
 {
 	Node* newItem;
 	newItem = new Node;
@@ -100,7 +100,7 @@ void InsertFront(List *list, int Data)
 	}
 }
 
-void InsertEnd(List *list, int Data)
+void InsertEnd(DoubleLinkedList *list, int Data)
 {
 	Node* newItem = new Node;
 	newItem->Data = Data;
@@ -122,7 +122,7 @@ void InsertEnd(List *list, int Data)
 	}
 }
 
-void InsertAfter(List *list, int value, int index)
+void InsertAfter(DoubleLinkedList *list, int value, int index)
 {
 	int count = -1;
 	Node* newItem = new Node;
@@ -152,7 +152,7 @@ void InsertAfter(List *list, int value, int index)
 }
 
 
-void InsertBefore(List *list, int value, int index)
+void InsertBefore(DoubleLinkedList *list, int value, int index)
 {
 	int count = 0;
 	Node* newItem = new Node;
@@ -183,7 +183,7 @@ void InsertBefore(List *list, int value, int index)
 }
 
 
-void DeleteNode(List* list, int index)
+void DeleteNode(DoubleLinkedList* list, int index)
 {
 	int count = 0;
 	Node* delNode = list->Head;
