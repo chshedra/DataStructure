@@ -18,6 +18,7 @@ void MainMenu()
 		int choice = InputValidation();
 		switch (choice)
 		{
+			//TODO:RSDN
 		case 1:
 		{
 			RBTreeMenu();
@@ -49,6 +50,8 @@ void RBTreeMenu()
 	RBTreeNode* searchedElem = nullptr;
 	cout << "How many elements to create ";
 	int number = InputValidation();
+	//TODO: Дубль
+	//TODO: nullptr
 	srand(time(NULL));
 	for (int i = 0; i < number; i++)
 	{
@@ -129,6 +132,8 @@ void AVLTreeMenu()
 	AVLTree* newTree = new AVLTree();
 	cout << "Enter the count of elemetns\t";
 	int number = InputValidation();
+	//TODO: nullptr
+	//TODO: Дубль
 	srand(time(NULL));
 	for (int i = 0; i < number; i++)
 	{
@@ -147,6 +152,7 @@ void AVLTreeMenu()
 		int choice = InputValidation();
 		switch (choice)
 		{
+			//TODO:RSDN
 		case 1:
 		{
 			cout << "Enter the number\n";

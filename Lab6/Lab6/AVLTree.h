@@ -7,6 +7,7 @@
 
 struct AVLTree
 {
+	//TODO: Передача ноды?
 	unsigned int CountHeight(AVLTreeNode*);
 	int CountBalanceFactor(AVLTreeNode*);
 
