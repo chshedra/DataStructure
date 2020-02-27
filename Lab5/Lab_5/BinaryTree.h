@@ -8,7 +8,7 @@ struct BinaryTree
 	BinaryTreeNode* Root;
 
 	void Create();
-	//TODO: передача ноды?
+
 	BinaryTreeNode* Find(BinaryTreeNode* node, int key);
 	BinaryTreeNode* FindMax(BinaryTreeNode* node);
 	BinaryTreeNode* FindMin(BinaryTreeNode* node);

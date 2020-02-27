@@ -6,7 +6,6 @@ struct Treap
 	TreapNode* Root;
 
 	void Create();
-	//TODO: Передача ноды?
 	TreapNode* Find(TreapNode* node, int key);
 	void Split(TreapNode* node, int key,
 		TreapNode*& left, TreapNode*& right);

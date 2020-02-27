@@ -4,8 +4,7 @@
 
 void TreapNode::Init(int key)
 {
-	//TODO: nullptr
-	srand(time(0));
+	srand(time(nullptr));
 
 	Key = key;
 	Priority = rand() % 100;

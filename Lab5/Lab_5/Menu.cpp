@@ -33,7 +33,6 @@ void MainMenu()
 {
 	while (true)
 	{
-		//new comment
 		cout << "1.Binary tree\n"
 			<< "2.Treap Tree\n"
 			<< "3.Exit\n";
@@ -41,25 +40,24 @@ void MainMenu()
 		int choice = InputValidation();
 		switch (choice)
 		{
-			//TODO:RSDN
-		case 1:
-		{
-			BinaryTreeMenu();
-			break;
-		}
-		case 2:
-		{
-			TreapTreeMenu();
-			break;
-		}
-		case 3:
-		{
-			exit(0);
-		}
-		default:
-		{
-			cout << "Select the right item!" << endl;
-		}
+			case 1:
+			{
+				BinaryTreeMenu();
+				break;
+			}
+			case 2:
+			{
+				TreapTreeMenu();
+				break;
+			}
+			case 3:
+			{
+				exit(0);
+			}
+			default:
+			{
+				cout << "Select the right item!" << endl;
+			}
 		}
 	}
 }
@@ -85,138 +83,121 @@ void BinaryTreeMenu()
 		int choice = InputValidation();
 		switch (choice)
 		{
-			//TODO:RSDN
-		case 1:
-		{
-			if (!newTree->IsCreated)
+			case 1:
 			{
-				newTree->Create();
-			}
+				if (!newTree->IsCreated)
+				{
+					newTree->Create();
+				}
 
-			cout << "Enter the value: ";
-			int key = InputValidation();
-			cout << endl;
+				cout << "Enter the value: ";
+				int key = InputValidation();
+				cout << endl;
 
-			bool isInserted = newTree->Insert(newTree->Root, key);
-			if (isInserted == true)
-			{
-				Print(newTree->Root, 0);
-			}
-			else
-			{
-				//TODO: Дубль
-				cout << "This element is already in the tree!\n";
-			}
-			break;
-		}
-		case 2:
-		{
-			if (!newTree->IsCreated || newTree->IsEmpty())
-			{
-				cout << "Tree is empty\n";
+				bool isInserted = newTree->Insert(newTree->Root, key);
+				ShowMessage(isInserted, newTree->Root);
 				break;
 			}
+			case 2:
+			{
+				if (!newTree->IsCreated || newTree->IsEmpty())
+				{
+					cout << "Tree is empty\n";
+					break;
+				}
 
-			cout << "Enter the key: ";
-			int key = InputValidation();
-			cout << endl;
+				cout << "Enter the key: ";
+				int key = InputValidation();
+				cout << endl;
 
-			bool isRemoved = newTree->Remove(newTree->Root, key);
-			if (isRemoved = true)
-			{
-				Print(newTree->Root, 0);
-			}
-			else
-			{
-				//TODO: Дубль
-				cout << "There is not this element in the tree!\n";
-			}
-			break;
-		}
-		case 3:
-		{
-			if (!newTree->IsCreated || newTree->IsEmpty())
-			{
-				cout << "Tree is empty\n";
+				bool isRemoved = newTree->Remove(newTree->Root, key);
+				ShowMessage(isRemoved, newTree->Root);
 				break;
 			}
-
-			cout << "Enter the value: ";
-			int key = InputValidation();
-			cout << "\n";
-
-			BinaryTreeNode* node =
-				newTree->Find(newTree->Root, key);
-
-			cout << 
-				(node == nullptr 
-				? "There is not this element in the tree\n"
-				: "Element has been found\n");
-
-			break;
-		}
-		case 4:
-		{
-			if (!newTree->IsCreated || newTree->IsEmpty())
+			case 3:
 			{
-				cout << "Дерево пустое.\n";
+				if (!newTree->IsCreated || newTree->IsEmpty())
+				{
+					cout << "Tree is empty\n";
+					break;
+				}
+
+				cout << "Enter the value: ";
+				int key = InputValidation();
+				cout << "\n";
+
+				BinaryTreeNode* node =
+					newTree->Find(newTree->Root, key);
+
+				cout << 
+					(node == nullptr 
+					? "There is not this element in the tree\n"
+					: "Element has been found\n");
+
 				break;
 			}
-
-			BinaryTreeNode* max;
-			max = newTree->FindMax(newTree->Root);
-
-			if (max == nullptr)
+			case 4:
 			{
-				cout << "Tree is empty\n";
+				if (!newTree->IsCreated || newTree->IsEmpty())
+				{
+					cout << "Дерево пустое.\n";
+					break;
+				}
+
+				BinaryTreeNode* max;
+				max = newTree->FindMax(newTree->Root);
+
+				if (max == nullptr)
+				{
+					cout << "Tree is empty\n";
+					break;
+				}
+
+				cout << "Maximal element is "
+					<< max->Key << ".\n";
 				break;
 			}
-
-			cout << "Maximal element is "
-				<< max->Key << ".\n";
-			break;
-		}
-		case 5:
-		{
-			if (!newTree->IsCreated || newTree->IsEmpty())
+			case 5:
 			{
-				cout << "Дерево пустое.\n";
+				if (!newTree->IsCreated || newTree->IsEmpty())
+				{
+					cout << "Дерево пустое.\n";
+					break;
+				}
+
+				BinaryTreeNode* min;
+				min = newTree->FindMin(newTree->Root);
+
+				if (min == nullptr)
+				{
+					cout << "Tree is empty\n";
+					break;
+				}
+
+				cout << "Minimal element is "
+					<< min->Key << ".\n";
 				break;
 			}
-
-			BinaryTreeNode* min;
-			min = newTree->FindMin(newTree->Root);
-
-			if (min == nullptr)
+			case 6:
 			{
-				cout << "Tree is empty\n";
+				if (!newTree->IsCreated)
+				{
+					break;
+				}
+
+				newTree->Clear(newTree->Root);
+				newTree->IsCreated = false;
 				break;
 			}
-
-			cout << "Minimal element is "
-				<< min->Key << ".\n";
-			break;
-		}
-		case 6:
-		{
-			if (!newTree->IsCreated)
+			case 7:
 			{
+				return;
+			}
+			default:
+			{
+				cout << "Selest the right item!\n";
 				break;
 			}
-
-			newTree->Clear(newTree->Root);
-			newTree->IsCreated = false;
-			break;
-		}
-		case 7:
-		{
-			return;
-		}
-		default:
-		{
-			cout << "Selest the right item!\n";
-			break;
-		}
 		}
 	}
 	delete newTree;
@@ -241,128 +222,139 @@ void TreapTreeMenu()
 			int choice = InputValidation();
 			switch (choice)
 			{
-				//TODO:RSDN
-			case 1:
-			{
-				if (!newTree->IsCreated)
+				case 1:
 				{
-					newTree->Create();
-				}
+					if (!newTree->IsCreated)
+					{
+						newTree->Create();
+					}
 
-				cout << "Enter the value: ";
-				int key = InputValidation();
-				cout << endl;
+					cout << "Enter the value: ";
+					int key = InputValidation();
+					cout << endl;
 
-				TreapNode* node = newTree->Find(newTree->Root, key);
-				if (node != nullptr)
-				{
-					cout << "This element in the tree!\n ";
+					TreapNode* node = newTree->Find(newTree->Root, key);
+					if (node != nullptr)
+					{
+						cout << "This element in the tree!\n ";
+						break;
+					}
+					newTree->SlowInsert(key);
+					PrintTreap(newTree->Root, 0);
 					break;
 				}
-				newTree->SlowInsert(key);
-				PrintTreap(newTree->Root, 0);
-				break;
-			}
-			case 2:
-			{
-				if (!newTree->IsCreated)
+				case 2:
 				{
-					newTree->Create();
-				}
+					if (!newTree->IsCreated)
+					{
+						newTree->Create();
+					}
 
-				cout << "Enter the value ";
-				int key = InputValidation();
-				cout << endl;
+					cout << "Enter the value ";
+					int key = InputValidation();
+					cout << endl;
 
-				TreapNode* node = newTree->Find(newTree->Root, key);
-				if (node != nullptr)
-				{
-					cout << "This element in the tree!\n ";
+					TreapNode* node = newTree->Find(newTree->Root, key);
+					if (node != nullptr)
+					{
+						cout << "This element in the tree!\n ";
+						break;
+					}
+					int priority = rand() % 100;
+
+					newTree->FastInsert(newTree->Root, nullptr, key, priority);
+					PrintTreap(newTree->Root, 0);
 					break;
 				}
-				int priority = rand() % 100;
-
-				newTree->FastInsert(newTree->Root, nullptr, key, priority);
-				PrintTreap(newTree->Root, 0);
-				break;
-			}
-			case 3:
-			{
-				if (!newTree->IsCreated || newTree->IsEmpty())
+				case 3:
 				{
-					cout << "Tree is empty!\n";
+					if (!newTree->IsCreated || newTree->IsEmpty())
+					{
+						cout << "Tree is empty!\n";
+						break;
+					}
+
+					cout << "Enter the value: ";
+					int key = InputValidation();
+					cout << endl;
+
+					newTree->SlowRemove(key);
+					PrintTreap(newTree->Root, 0);
 					break;
 				}
-
-				cout << "Enter the value: ";
-				int key = InputValidation();
-				cout << endl;
-
-				newTree->SlowRemove(key);
-				PrintTreap(newTree->Root, 0);
-				break;
-			}
-			case 4:
-			{
-				if (!newTree->IsCreated || newTree->IsEmpty())
+				case 4:
 				{
-					cout << "Tree is empty\n";
+					if (!newTree->IsCreated || newTree->IsEmpty())
+					{
+						cout << "Tree is empty\n";
+						break;
+					}
+
+					cout << "Enter the value: ";
+					int key = InputValidation();
+					cout << endl;
+
+					newTree->FastRemove(newTree->Root, nullptr, key);
+					PrintTreap(newTree->Root, 0);
 					break;
 				}
-
-				cout << "Enter the value: ";
-				int key = InputValidation();
-				cout << endl;
-
-				newTree->FastRemove(newTree->Root, nullptr, key);
-				PrintTreap(newTree->Root, 0);
-				break;
-			}
-			case 5:
-			{
-				if (!newTree->IsCreated || newTree->IsEmpty())
+				case 5:
 				{
-					cout << "Tree is empty\n";
+					if (!newTree->IsCreated || newTree->IsEmpty())
+					{
+						cout << "Tree is empty\n";
+						break;
+					}
+
+					cout << "Enter the value: ";
+					int key = InputValidation();
+
+					TreapNode* node = newTree->Find(newTree->Root, key);
+
+					if (node == nullptr)
+					{
+						cout << "There is not this element in the tree\n";
+					}
+					else
+					{
+						cout << "Element = " << node->Key << endl
+							<< "Priority = " << node->Priority << endl;
+					}
 					break;
 				}
-
-				cout << "Enter the value: ";
-				int key = InputValidation();
-
-				TreapNode* node = newTree->Find(newTree->Root, key);
-
-				if (node == nullptr)
+				case 6:
 				{
-					cout << "There is not this element in the tree\n";
-				}
-				else
-				{
-					cout << "Element = " << node->Key << endl
-						<< "Priority = " << node->Priority << endl;
-				}
-				break;
-			}
-			case 6:
-			{
-				if (!newTree->IsCreated || newTree->IsEmpty())
-				{
+					if (!newTree->IsCreated || newTree->IsEmpty())
+					{
+						break;
+					}
+
+					newTree->Clear(newTree->Root);
+					newTree->IsCreated = false;
 					break;
 				}
+				case 7:
+				{
+					return;
+				}
 
-				newTree->Clear(newTree->Root);
-				newTree->IsCreated = false;
-				break;
-			}
-			case 7:
-			{
-				return;
-			}
-
-			default:
-				cout << "Select the right item!\n";
-				break;
-			}
+				default:
+					cout << "Select the right item!\n";
+					break;
+				}
 		}
+	}
+}
+
+void ShowMessage(bool isDone, BinaryTreeNode* node)
+{
+	if (isDone == true)
+	{
+		Print(node, 0);
+	}
+	else
+	{
+		cout << "This element is already in the tree!\n";
 	}
 }
 
