@@ -18,25 +18,24 @@ void MainMenu()
 		int choice = InputValidation();
 		switch (choice)
 		{
-			//TODO:RSDN
-		case 1:
-		{
-			RBTreeMenu();
-			break;
-		}
-		case 2:
-		{
-			AVLTreeMenu();
-			break;
-		}
-		case 3:
-		{
-			exit(0);
-		}
-		default:
-		{
-			cout << "Select the right item!" << endl;
-		}
+			case 1:
+			{
+				RBTreeMenu();
+				break;
+			}
+			case 2:
+			{
+				AVLTreeMenu();
+				break;
+			}
+			case 3:
+			{
+				exit(0);
+			}
+			default:
+			{
+				cout << "Select the right item!" << endl;
+			}
 		}
 	}
 }
@@ -50,9 +49,7 @@ void RBTreeMenu()
 	RBTreeNode* searchedElem = nullptr;
 	cout << "How many elements to create ";
 	int number = InputValidation();
-	//TODO: Дубль
-	//TODO: nullptr
-	srand(time(NULL));
+	srand(time(nullptr));
 	for (int i = 0; i < number; i++)
 	{
 		newTree->Insert(rand() % 100);
@@ -132,9 +129,7 @@ void AVLTreeMenu()
 	AVLTree* newTree = new AVLTree();
 	cout << "Enter the count of elemetns\t";
 	int number = InputValidation();
-	//TODO: nullptr
-	//TODO: Дубль
-	srand(time(NULL));
+	srand(time(nullptr));
 	for (int i = 0; i < number; i++)
 	{
 		newTree->Root = newTree->AddElement(newTree->Root, rand() % 100);
@@ -152,54 +147,53 @@ void AVLTreeMenu()
 		int choice = InputValidation();
 		switch (choice)
 		{
-			//TODO:RSDN
-		case 1:
-		{
-			cout << "Enter the number\n";
-			number = InputValidation();
-			newTree->Root = newTree->AddElement(newTree->Root, number);
-			DisplayAVLTree(newTree->Root, 0, nullptr);
-			break;
-		}
-		case 2:
-		{
-			cout << "Enter the number\n";
-			number = InputValidation();
-			if (newTree->SearchElement(number))
+			case 1:
 			{
-				newTree->Root = newTree->RemoveElement(newTree->Root, number);
+				cout << "Enter the number\n";
+				number = InputValidation();
+				newTree->Root = newTree->AddElement(newTree->Root, number);
+				DisplayAVLTree(newTree->Root, 0, nullptr);
+				break;
 			}
-			else
+			case 2:
 			{
-				cout << "There is not this element in the tree\n";
+				cout << "Enter the number\n";
+				number = InputValidation();
+				if (newTree->SearchElement(number))
+				{
+					newTree->Root = newTree->RemoveElement(newTree->Root, number);
+				}
+				else
+				{
+					cout << "There is not this element in the tree\n";
+				}
+				DisplayAVLTree(newTree->Root, 0, nullptr);
+				break;
 			}
-			DisplayAVLTree(newTree->Root, 0, nullptr);
-			break;
-		}
-		case 3:
-		{
-			cout << "Enter the number\n";
-			number = InputValidation();
-			cout << endl;
-			if (newTree->SearchElement(number))
+			case 3:
 			{
-				cout << "Element has been found\n";
-				DisplayAVLTree(newTree->Root, 0, &number);
+				cout << "Enter the number\n";
+				number = InputValidation();
+				cout << endl;
+				if (newTree->SearchElement(number))
+				{
+					cout << "Element has been found\n";
+					DisplayAVLTree(newTree->Root, 0, &number);
+				}
+				else
+				{
+					cout << "There is not this element in the tree\n";
+				}
+				break;
 			}
-			else
+			case 4:
 			{
-				cout << "There is not this element in the tree\n";
+				return;
 			}
-			break;
-		}
-		case 4:
-		{
-			return;
-		}
-		default:
-			cout << "Select the right item!\n";
-			break;
-		}
+			default:
+				cout << "Select the right item!\n";
+				break;
+			}
 	}
 	delete newTree;
 }

@@ -7,18 +7,17 @@
 
 struct AVLTree
 {
-	//TODO: Передача ноды?
-	unsigned int CountHeight(AVLTreeNode*);
-	int CountBalanceFactor(AVLTreeNode*);
+	unsigned int CountHeight(AVLTreeNode* node);
+	int CountBalanceFactor(AVLTreeNode* node);
 
-	void FixHeight(AVLTreeNode*);
+	void FixHeight(AVLTreeNode* node);
 	AVLTreeNode* Root = nullptr;
-	AVLTreeNode* AddElement(AVLTreeNode*, int);
-	AVLTreeNode* RemoveElement(AVLTreeNode*, int);
-	bool SearchElement(int);
-	AVLTreeNode* RotateLeft(AVLTreeNode*);
-	AVLTreeNode* RotateRight(AVLTreeNode*);
+	AVLTreeNode* AddElement(AVLTreeNode* node, int value);
+	AVLTreeNode* RemoveElement(AVLTreeNode*node, int value);
+	bool SearchElement(int value);
+	AVLTreeNode* RotateLeft(AVLTreeNode* node);
+	AVLTreeNode* RotateRight(AVLTreeNode* node);
 	AVLTreeNode* Balance(AVLTreeNode* node);
-	AVLTreeNode* SearchMin(AVLTreeNode*);
-	AVLTreeNode* RemoveMin(AVLTreeNode*);
+	AVLTreeNode* SearchMin(AVLTreeNode* node);
+	AVLTreeNode* RemoveMin(AVLTreeNode* node);
 };

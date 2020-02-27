@@ -8,13 +8,12 @@ struct RBTree
 	RBTreeNode* Root;
 	RBTreeNode* Nil;
 	bool Insert(int);
-	//TODO: Передача ноды?
-	bool DeleteElem(RBTreeNode*);
-	bool SearchElem(RBTreeNode*&, int);
-	void RotateLeft(RBTreeNode*);
-	void RotateRight(RBTreeNode*);
-	void InsertFixup(RBTreeNode*);
-	void DeleteFixup(RBTreeNode*);
+	bool DeleteElem(RBTreeNode* node);
+	bool SearchElem(RBTreeNode*& node, int value);
+	void RotateLeft(RBTreeNode* node);
+	void RotateRight(RBTreeNode* node);
+	void InsertFixup(RBTreeNode* node);
+	void DeleteFixup(RBTreeNode* node);
 
 	RBTree()
 	{
