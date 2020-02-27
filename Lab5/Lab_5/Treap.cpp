@@ -111,8 +111,9 @@ void Treap::FastInsert(TreapNode* node, TreapNode* parent,
 
 		if (parent != nullptr)
 		{
-			parent->Left == node ? parent->Left = newNode :
-				parent->Right = newNode;
+			parent->Left == node 
+				? parent->Left = newNode 
+				: parent->Right = newNode;
 		}
 		else
 		{

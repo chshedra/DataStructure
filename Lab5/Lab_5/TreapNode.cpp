@@ -4,6 +4,7 @@
 
 void TreapNode::Init(int key)
 {
+	//TODO: nullptr
 	srand(time(0));
 
 	Key = key;

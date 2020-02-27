@@ -41,6 +41,7 @@ void MainMenu()
 		int choice = InputValidation();
 		switch (choice)
 		{
+			//TODO:RSDN
 		case 1:
 		{
 			BinaryTreeMenu();
@@ -84,6 +85,7 @@ void BinaryTreeMenu()
 		int choice = InputValidation();
 		switch (choice)
 		{
+			//TODO:RSDN
 		case 1:
 		{
 			if (!newTree->IsCreated)
@@ -102,6 +104,7 @@ void BinaryTreeMenu()
 			}
 			else
 			{
+				//TODO: Дубль
 				cout << "This element is already in the tree!\n";
 			}
 			break;
@@ -125,6 +128,7 @@ void BinaryTreeMenu()
 			}
 			else
 			{
+				//TODO: Дубль
 				cout << "There is not this element in the tree!\n";
 			}
 			break;
@@ -144,7 +148,9 @@ void BinaryTreeMenu()
 			BinaryTreeNode* node =
 				newTree->Find(newTree->Root, key);
 
-			cout << (node == nullptr ? "There is not this element in the tree\n"
+			cout << 
+				(node == nullptr 
+				? "There is not this element in the tree\n"
 				: "Element has been found\n");
 
 			break;
@@ -235,6 +241,7 @@ void TreapTreeMenu()
 			int choice = InputValidation();
 			switch (choice)
 			{
+				//TODO:RSDN
 			case 1:
 			{
 				if (!newTree->IsCreated)

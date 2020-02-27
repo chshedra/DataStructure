@@ -118,6 +118,7 @@ bool BinaryTree::Remove(BinaryTreeNode* node, int key)
 		{
 			if (node->Parent != nullptr)
 			{
+				//TODO: formatting
 				node->Parent->Left == node ? node->Parent->Left = nullptr :
 					node->Parent->Right = nullptr;
 			}
@@ -136,6 +137,7 @@ bool BinaryTree::Remove(BinaryTreeNode* node, int key)
 
 			if (oldNode->Parent != nullptr)
 			{
+				//TODO: formatting
 				oldNode->Parent->Left == oldNode ?
 					oldNode->Parent->Left = node :
 					oldNode->Parent->Right = node;
