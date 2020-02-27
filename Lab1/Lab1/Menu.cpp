@@ -30,9 +30,11 @@ void Menu(Array* dynArray)
 		int choice = InputValidation();
 		switch (choice)
 		{
+			//TODO:RSDN
 		case 1:
 		{
-			if (isCreated == false)
+
+			if (!isCreated)
 			{
 				cout << "Enter the size of array: ";
 				int size = InputValidation();
@@ -56,6 +58,7 @@ void Menu(Array* dynArray)
 		}
 		case 2:
 		{
+			//TODO:
 			if (isCreated == false)
 			{
 				cout << "Enter the size of array: ";
@@ -137,10 +140,10 @@ void Menu(Array* dynArray)
 			}
 			else
 			{
-				bool isDeleted;
 				cout << "Enter the index: ";
 				int index = InputValidation();
-				isDeleted = DeleteElem(dynArray, index);
+				bool isDeleted = DeleteElem(dynArray, index);
+				//TODO: Дубль
 				if (isDeleted == true)
 				{
 					cout << "Element has been deleted" << endl;
@@ -160,12 +163,14 @@ void Menu(Array* dynArray)
 			}
 			else
 			{
+				//TODO: Почему здесь?
 				bool isSearched;
 				int index;
 				cout << "Enter the value: ";
 				int value = InputValidation();
 				isSearched = SearchElem(dynArray, value, &index);
 				cout << endl;
+				//TODO: Дубль
 				if (isSearched == true)
 				{
 					cout << "Element by index " << index << endl;
@@ -191,6 +196,7 @@ void Menu(Array* dynArray)
 				int value = InputValidation();
 				isSearched = BinarySearch(dynArray, value, &index);
 				cout << endl;
+				//TODO: Дубль
 				if (isSearched == true)
 				{
 					cout << "Element by index " << index << endl;

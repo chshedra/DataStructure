@@ -38,6 +38,7 @@ void Resize(Array* dynArray)
 {
 	if (dynArray->length >= dynArray->capacity)
 	{
+		//TODO: вынести в константу
 		dynArray->capacity = dynArray->capacity * 1.5;
 	}
 
