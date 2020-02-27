@@ -11,6 +11,7 @@ void PrintList(List* list);
 void main()
 {
 	setlocale(LC_ALL, "Russian");
+
 	List* set = CreateList();
 
 	while (true)
@@ -27,6 +28,7 @@ void main()
 		choice = InputValidation();
 			switch (choice)
 			{
+				//TODO:RSDN
 			case 1:
 			{
 					  int value;
@@ -54,12 +56,14 @@ void main()
 						  cout << "Необходимо создать список!" << endl;
 						  break;
 					  }
+					  //TODO: почему здесь?
 					  int value;
 					  int index;
 					  cout << "Введите элемент: ";
 					  value = InputValidation();
 					  cout << "Введите индекс: ";
 					  index = InputValidation();
+					  //TODO: Дубль
 					  if(index < 0 || index > (set->Size - 1))
 					  {
 						  cout << "Индекс не соответствует размеру списка!";
@@ -77,12 +81,15 @@ void main()
 						  cout << "Необходимо создать список!" << endl;
 						  break;
 					  }
+
+					  //TODO: почему здесь?
 					  int value;
 					  int index;
 					  cout << "Введите элемент: ";
 					  value = InputValidation();
 					  cout << "Введите индекс: ";
 					  index = InputValidation();
+					  //TODO: Дубль
 					  if (index < 0 || index >(set->Size - 1))
 					  {
 						  cout << "Индекс не соответствует размеру списка!";

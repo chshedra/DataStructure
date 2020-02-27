@@ -13,7 +13,7 @@
   <PropertyGroup Label="Globals">
     <ProjectGuid>{6C94720E-25DD-458D-8826-3676C4C2340A}</ProjectGuid>
     <RootNamespace>Двусвязныйсписок2</RootNamespace>
-    <ProjectName>Двусвязный список</ProjectName>
+    <ProjectName>DoubleLinkedList</ProjectName>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />

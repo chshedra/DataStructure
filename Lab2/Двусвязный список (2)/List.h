@@ -1,6 +1,6 @@
 #pragma once
 #include "Node.h"
-
+//TODO: naming
 struct List
 {
 	Node *Head;
@@ -9,6 +9,7 @@ struct List
 };
 
 List* CreateList();
+//TODO: naming
 void InsertFront(List* newList, int value);
 void InsertEnd(List *list, int value);
 void DeleteNode(List* list, int index);
