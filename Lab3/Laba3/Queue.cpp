@@ -7,7 +7,7 @@ void CreateQueue(Queue* newQueue)
 	newQueue->Second = CreateStack();
 }
 
-//добавление элемента в очередь
+//РґРѕР±Р°РІР»РµРЅРёРµ СЌР»РµРјРµРЅС‚Р° РІ РѕС‡РµСЂРµРґСЊ
 bool Enqueue(Queue* newQueue, int& value)
 {
 	bool isOverflow;
