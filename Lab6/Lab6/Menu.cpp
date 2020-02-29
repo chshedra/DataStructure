@@ -5,7 +5,6 @@
 #include "Output.h"
 
 using namespace std;
-#pragma once
 
 void MainMenu()
 {
