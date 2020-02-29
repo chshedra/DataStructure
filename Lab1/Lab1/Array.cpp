@@ -7,7 +7,7 @@
 
 using namespace std;
 
-//проверка кодировки
+//РїСЂРѕРІРµСЂРєР° РєРѕРґРёСЂРѕРІРєРё
 
 void Create(Array* dynamicArray, int size)
 {
