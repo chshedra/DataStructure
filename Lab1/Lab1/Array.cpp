@@ -3,11 +3,7 @@
 #include "Array.h"
 #include "Menu.h"
 
-
-
 using namespace std;
-
-//проверка кодировки
 
 void Create(Array* dynamicArray, int size)
 {

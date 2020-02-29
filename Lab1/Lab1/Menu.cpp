@@ -224,6 +224,7 @@ int InputValidation()
 	return number;
 }
 
+
 void ShowMessage(bool isSearched, int index)
 {
 	if (isSearched == true)
