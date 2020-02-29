@@ -144,7 +144,7 @@ void Treap::SlowRemove(int key)
 
 	if (newRight == nullptr)
 	{
-		cout << "Òàêîãî ýëåìåíòà íåò.\n\n";
+		cout << "Ð¢Ð°ÐºÐ¾Ð³Ð¾ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð° Ð½ÐµÑ‚.\n\n";
 		return;
 	}
 
@@ -157,7 +157,7 @@ void Treap::FastRemove(TreapNode* node, TreapNode* parent, int key)
 {
 	if (node == nullptr)
 	{
-		cout << "Òàêîãî ýëåìåíòà íåò.\n\n";
+		cout << "Ð¢Ð°ÐºÐ¾Ð³Ð¾ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð° Ð½ÐµÑ‚.\n\n";
 		return;
 	}
 	if (key < node->Key)

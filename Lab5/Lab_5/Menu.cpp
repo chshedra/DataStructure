@@ -140,7 +140,7 @@ void BinaryTreeMenu()
 			{
 				if (!newTree->IsCreated || newTree->IsEmpty())
 				{
-					cout << "Äåðåâî ïóñòîå.\n";
+					cout << "Ð”ÐµÑ€ÐµÐ²Ð¾ Ð¿ÑƒÑÑ‚Ð¾Ðµ.\n";
 					break;
 				}
 
@@ -161,7 +161,7 @@ void BinaryTreeMenu()
 			{
 				if (!newTree->IsCreated || newTree->IsEmpty())
 				{
-					cout << "Äåðåâî ïóñòîå.\n";
+					cout << "Ð”ÐµÑ€ÐµÐ²Ð¾ Ð¿ÑƒÑÑ‚Ð¾Ðµ.\n";
 					break;
 				}
 
