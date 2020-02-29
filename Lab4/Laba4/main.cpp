@@ -151,7 +151,7 @@ void HashTableMenu(HashTable** table, int size)
 		}
 		default:
 		{
-			cout << "Выбран неверный пункт\n";
+			cout << "Р’С‹Р±СЂР°РЅ РЅРµРІРµСЂРЅС‹Р№ РїСѓРЅРєС‚\n";
 			break;
 		}
 		}
@@ -212,7 +212,7 @@ void DictionaryMenu(Dictionary* newDictionary, int size)
 		}
 		default:
 		{
-			cout << "Выбран неверный пункт\n";
+			cout << "Р’С‹Р±СЂР°РЅ РЅРµРІРµСЂРЅС‹Р№ РїСѓРЅРєС‚\n";
 			break;
 		}
 		}
